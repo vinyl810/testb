@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family:'KoPubWorldDotum';
+	font-style:normal;
+	font-weight:300;
+	src:local('KoPubWorldDotum'),
+	url('../assets/font/KoPubWorldDotumLight.woff') format('woff');
+}
+@font-face {
+	font-family:'KoPubWorldDotum';
+	font-style:normal;
+	font-weight:400;
+	src:local('KoPubWorldDotum'),
+	url('../assets/font/KoPubWorldDotumMedium.woff') format('woff');
+}
+@font-face {
+	font-family:'KoPubWorldDotum';
+	font-style:normal;
+	font-weight:700;
+	src:local('KoPubWorldDotum'),
+	url('../assets/font/KoPubWorldDotumBold.woff') format('woff');
+}
