@@ -63,7 +63,18 @@ module.exports = {
     'react/react-in-jsx-scope': 'off', // from React@17, this is safe
     'react/no-unknown-property': [
       'error',
-      { ignore: ['intensity', 'position', 'args', 'attach', 'flatShading'] },
+      {
+        ignore: [
+          'intensity',
+          'position',
+          'args',
+          'attach',
+          'flatShading',
+          'rotation',
+          'castShadow',
+          'receiveShadow',
+        ],
+      },
     ], // TODO: figure out
   },
 };

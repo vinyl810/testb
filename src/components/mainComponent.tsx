@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../style/button.css';
-import Box from './boxComponent';
-import Header from './header';
+import 'style/button.css';
+import Bird from 'components/bird/BirdComponent';
+import Header from 'components/header';
 
 function Main() {
   const [count, setCount] = useState(0);
@@ -9,7 +9,7 @@ function Main() {
     <div className="Main block h-screen font-kopub font-bold">
       <Header />
       <div className="flex items-center justify-center">
-        <Box />
+        <Bird />
         <div className="grid justify-center self-stretch p-5">
           <h1 className="m-2 flex h-80 w-96 items-center justify-center rounded-md bg-slate-200 p-5 text-4xl text-slate-700 shadow-lg">
             TESTB
