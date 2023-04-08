@@ -4,7 +4,11 @@ const movementState = {
   isNodding: false,
 };
 
-function movementStateReducer(state = movementState, action: { type: string }) {
+const cameraMoveState = {
+  zoomIn: false,
+};
+
+function movementReducer(state = movementState, action: { type: string }) {
   if (action.type === 'startNod') {
     return { ...state, isNodding: true };
   }
@@ -17,8 +21,18 @@ function movementStateReducer(state = movementState, action: { type: string }) {
   return state;
 }
 
+function cameraMoveReducer(state = cameraMoveState, action: { type: string }) {
+  if (action.type === 'toggleZoom') {
+    return { ...state, zoomIn: !state.zoomIn };
+  }
+  return state;
+}
+
 const store = configureStore({
-  reducer: { movements: movementStateReducer },
+  reducer: {
+    movements: movementReducer,
+    cameraMoves: cameraMoveReducer,
+  },
 });
 
 export default store;

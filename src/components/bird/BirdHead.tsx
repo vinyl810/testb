@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useFrame } from '@react-three/fiber';
-import { Torus, GradientTexture } from '@react-three/drei';
+import { Torus, GradientTexture, Box, Cylinder } from '@react-three/drei';
 
-import { d2r, r2d } from 'utils/common';
+import { d2r, r2d, getRandomArb } from 'utils/common';
 
 function BirdHead() {
   const [headRotationY, setHeadRotationY] = useState(d2r(15));
   const [isGoinDown, setIsGoinDown] = useState(true);
+  const [winkIt, setWinkIt] = useState(false);
+  const [winkFrameCount, setWinkFrameCount] = useState(0);
   const movements = useSelector(
     (state: { movements: { isNodding: boolean } }) => state.movements,
   );
 
   useFrame(() => {
+    setWinkFrameCount(winkFrameCount + 1);
     if (isGoinDown && movements.isNodding) {
       setHeadRotationY(
         headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
@@ -30,6 +33,14 @@ function BirdHead() {
     }
     if (!movements.isNodding) {
       setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
+    }
+    if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
+      setWinkIt(true);
+      setWinkFrameCount(0);
+    }
+    if (winkIt && winkFrameCount >= 10) {
+      setWinkIt(false);
+      setWinkFrameCount(0);
     }
   });
 
@@ -61,25 +72,70 @@ function BirdHead() {
       </mesh>
 
       {/* Left eye */}
-      <group
-        position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
-        rotation={[-d2r(90), d2r(90 - 25), 0]}
-      >
-        <Torus args={[0.125, 0.045, 50, 50]} />
-        <mesh rotation={[d2r(90), 0, 0]} castShadow receiveShadow>
-          <cylinderGeometry
-            args={[0.125, 0.125, 0.1, 50, 50]}
-            attach="geometry"
-          />
-          <meshBasicMaterial>
-            <GradientTexture
-              stops={[0, 0.5, 1]}
-              colors={['black', 'black', 'black']}
-              size={1024}
+      {!winkIt ? (
+        <group
+          position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
+          rotation={[-d2r(90), d2r(90 - 25), 0]}
+        >
+          <Torus args={[0.125, 0.045, 50, 50]} />
+          <mesh rotation={[d2r(90), 0, 0]} castShadow receiveShadow>
+            <cylinderGeometry
+              args={[0.125, 0.125, 0.1, 50, 50]}
+              attach="geometry"
             />
-          </meshBasicMaterial>
-        </mesh>
-      </group>
+            <meshBasicMaterial>
+              <GradientTexture
+                stops={[0, 0.5, 1]}
+                colors={['black', 'black', 'black']}
+                size={1024}
+              />
+            </meshBasicMaterial>
+          </mesh>
+        </group>
+      ) : (
+        <group
+          position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
+          rotation={[-d2r(90), d2r(90 - 25), 0]}
+        >
+          <Box
+            args={[0.2, 0.1, 0.125, 50, 50]}
+            position={[0, 0, 0]}
+            rotation={[d2r(90), 0, 0]}
+            castShadow
+            receiveShadow
+          />
+          <Cylinder
+            args={[0.125 / 2, 0.085, 0.175, 50, 50]}
+            position={[-0.1, 0, -0.0375]}
+            rotation={[d2r(90), 0, 0]}
+          />
+          <Cylinder
+            args={[0.125 / 2, 0.085, 0.175, 50, 50]}
+            position={[0.1, 0, -0.0375]}
+            rotation={[d2r(90), 0, 0]}
+          />
+          <Box
+            args={[0.19, 0.1, 0.0775, 50, 50]}
+            position={[0, 0, 0.0075]}
+            rotation={[d2r(90), 0, 0]}
+            castShadow
+            receiveShadow
+            material-color="black"
+          />
+          <Cylinder
+            args={[0.075 / 2, 0.085, 0.175, 50, 50]}
+            position={[-0.0825, 0, -0.03]}
+            rotation={[d2r(90), 0, 0]}
+            material-color="black"
+          />
+          <Cylinder
+            args={[0.075 / 2, 0.085, 0.175, 50, 50]}
+            position={[0.0825, 0, -0.03]}
+            rotation={[d2r(90), 0, 0]}
+            material-color="black"
+          />
+        </group>
+      )}
 
       {/* Right Eye */}
       <group
