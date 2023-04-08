@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Torus, GradientTexture } from '@react-three/drei';
 
@@ -7,13 +8,14 @@ import { d2r, r2d } from 'utils/common';
 function BirdHead() {
   const [headRotationY, setHeadrotationY] = useState(d2r(15));
   const [isGoinDown, setIsGoinDown] = useState(true);
-  useThree(({ camera }) => {
-    camera.rotation.set(d2r(120), 0, 0);
-  });
+
+  const movements = useSelector(
+    (state: { movements: { isNodding: boolean } }) => state.movements,
+  );
   useFrame(() => {
-    if (isGoinDown) {
+    if (isGoinDown && movements.isNodding) {
       setHeadrotationY(headRotationY * 1.25);
-    } else {
+    } else if (movements.isNodding) {
       setHeadrotationY(headRotationY * 0.75);
     }
     if (r2d(headRotationY) >= 45) {
@@ -22,6 +24,9 @@ function BirdHead() {
     if (r2d(headRotationY) <= d2r(15)) {
       setIsGoinDown(true);
     }
+  });
+  useThree(({ camera }) => {
+    camera.rotation.set(d2r(120), 0, 0);
   });
   return (
     <group

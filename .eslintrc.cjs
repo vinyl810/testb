@@ -76,5 +76,6 @@ module.exports = {
         ],
       },
     ], // TODO: figure out
+    'default-param-last': 'off',
   },
 };
