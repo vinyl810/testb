@@ -1,3 +1,4 @@
+import 'style/index.css';
 import Main from 'components/MainComponent';
 
 function App() {

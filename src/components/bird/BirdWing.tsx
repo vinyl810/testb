@@ -14,7 +14,7 @@ function Wing({
 
   return (
     <group rotation={[rotx, roty, rotz]} position={[posx, posy, posz]}>
-      <mesh position={[0, 0, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
+      <mesh position={[-0.1, 0.2, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.5, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture
@@ -24,7 +24,7 @@ function Wing({
           />
         </meshBasicMaterial>
       </mesh>
-      <mesh position={[0, -0.1, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
+      <mesh position={[-0.1, 0.1, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.4, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture
@@ -34,7 +34,7 @@ function Wing({
           />
         </meshBasicMaterial>
       </mesh>
-      <mesh position={[0, -0.2, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
+      <mesh position={[-0.1, 0, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.3, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture

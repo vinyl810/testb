@@ -22,7 +22,7 @@ function Model() {
 }
 function Bird() {
   return (
-    <div className="ml-5 h-full w-3/4 self-stretch rounded-md bg-slate-100 shadow-lg">
+    <div className="ml-5 h-full w-full self-stretch rounded-md bg-slate-100 shadow-lg">
       <Canvas shadows camera={{ position: [-6, 3, 6] }}>
         <OrbitControls makeDefault />
         <ambientLight intensity={1} />
