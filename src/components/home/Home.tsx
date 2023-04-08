@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import Bird from 'components/bird/BirdComponent';
-import MainButton from 'components/MainButton';
-import Header from 'components/header';
+import MainButton from 'components/home/Button';
+import Header from 'components/home/Header';
 import githubImg from 'assets/img/github.png';
 
 function Main() {
