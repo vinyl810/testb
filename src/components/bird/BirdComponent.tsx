@@ -9,11 +9,11 @@ function Model() {
     <group position={[0, 2, 0]}>
       <BirdHead />
       <BirdBody />
-      <mesh position={[0, -4, 0]} receiveShadow>
+      <mesh position={[0, -3.925, 0]} receiveShadow>
         <cylinderGeometry args={[4.5, 4.5, 0.25, 50, 50]} />
         <meshStandardMaterial color="wheat" />
       </mesh>
-      <mesh position={[0, -3.9, 0]} receiveShadow>
+      <mesh position={[0, -3.825, 0]} receiveShadow>
         <cylinderGeometry args={[2.5, 2.5, 0.25, 50, 50]} />
         <meshStandardMaterial color="lightgreen" />
       </mesh>

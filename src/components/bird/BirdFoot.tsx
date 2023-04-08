@@ -25,12 +25,12 @@ function Foot({
       </mesh>
 
       <mesh
-        position={[0.6, -3.65, 0]}
+        position={[0.55, -3.65, 0]}
         rotation={[d2r(90), 0, d2r(90)]}
         castShadow
         receiveShadow
       >
-        <cylinderGeometry args={[0.065, 0.05, 0.5]} />
+        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -40,12 +40,12 @@ function Foot({
         </meshBasicMaterial>
       </mesh>
       <mesh
-        position={[0.65, -3.65, -0.1]}
+        position={[0.6, -3.65, -0.1]}
         rotation={[d2r(90), 0, d2r(110)]}
         castShadow
         receiveShadow
       >
-        <cylinderGeometry args={[0.065, 0.05, 0.5]} />
+        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -55,12 +55,12 @@ function Foot({
         </meshBasicMaterial>
       </mesh>
       <mesh
-        position={[0.65, -3.65, 0.1]}
+        position={[0.6, -3.65, 0.1]}
         rotation={[d2r(90), 0, d2r(70)]}
         castShadow
         receiveShadow
       >
-        <cylinderGeometry args={[0.065, 0.05, 0.5]} />
+        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}

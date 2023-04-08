@@ -1,33 +1,38 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { Torus, GradientTexture } from '@react-three/drei';
 
 import { d2r, r2d } from 'utils/common';
 
 function BirdHead() {
-  const [headRotationY, setHeadrotationY] = useState(d2r(15));
+  const [headRotationY, setHeadRotationY] = useState(d2r(15));
   const [isGoinDown, setIsGoinDown] = useState(true);
-
   const movements = useSelector(
     (state: { movements: { isNodding: boolean } }) => state.movements,
   );
+
   useFrame(() => {
     if (isGoinDown && movements.isNodding) {
-      setHeadrotationY(headRotationY * 1.25);
+      setHeadRotationY(
+        headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
+      );
     } else if (movements.isNodding) {
-      setHeadrotationY(headRotationY * 0.75);
+      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
     }
     if (r2d(headRotationY) >= 45) {
       setIsGoinDown(false);
+      setHeadRotationY(d2r(44));
     }
-    if (r2d(headRotationY) <= d2r(15)) {
+    if (r2d(headRotationY) <= 15) {
       setIsGoinDown(true);
+      setHeadRotationY(d2r(15.5));
+    }
+    if (!movements.isNodding) {
+      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
     }
   });
-  useThree(({ camera }) => {
-    camera.rotation.set(d2r(120), 0, 0);
-  });
+
   return (
     <group
       rotation={[d2r(90), headRotationY, d2r(90)]}
@@ -54,30 +59,8 @@ function BirdHead() {
           />
         </meshBasicMaterial>
       </mesh>
-      {/* Left Eye */}
-      {/* <Torus
-        args={[0.125, 0.045, 50, 50]}
-        position={[0.6, 0.3, -0.3]}
-        rotation={[45 * (Math.PI / 180), 125 * (Math.PI / 180), 0]}
-      />
-      <mesh
-        rotation={[d2r(-30), d2r(10), d2r(125)]}
-        position={[0.6, 0.3, -0.3]}
-        castShadow
-        receiveShadow
-      >
-        <cylinderGeometry
-          args={[0.125, 0.125, 0.1, 50, 50]}
-          attach="geometry"
-        />
-        <meshBasicMaterial>
-          <GradientTexture
-            stops={[0, 0.5, 1]}
-            colors={['black', 'black', 'black']}
-            size={1024}
-          />
-        </meshBasicMaterial>
-      </mesh> */}
+
+      {/* Left eye */}
       <group
         position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
         rotation={[-d2r(90), d2r(90 - 25), 0]}
@@ -97,6 +80,7 @@ function BirdHead() {
           </meshBasicMaterial>
         </mesh>
       </group>
+
       {/* Right Eye */}
       <group
         position={[-0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
