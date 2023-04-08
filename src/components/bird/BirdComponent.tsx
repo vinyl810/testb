@@ -6,23 +6,31 @@ import BirdBody from './BirdBody';
 
 function Model() {
   return (
-    <>
+    <group position={[0, 2, 0]}>
       <BirdHead />
       <BirdBody />
-    </>
+      <mesh position={[0, -4, 0]} receiveShadow>
+        <cylinderGeometry args={[4.5, 4.5, 0.25, 50, 50]} />
+        <meshStandardMaterial color="wheat" />
+      </mesh>
+      <mesh position={[0, -3.9, 0]} receiveShadow>
+        <cylinderGeometry args={[2.5, 2.5, 0.25, 50, 50]} />
+        <meshStandardMaterial color="lightgreen" />
+      </mesh>
+    </group>
   );
 }
 function Bird() {
   return (
     <div className="w-96 self-stretch rounded-md bg-slate-100 shadow-lg">
-      <Canvas shadows camera={{ position: [-7, 3, 5] }}>
+      <Canvas shadows camera={{ position: [-6, 3, 6] }}>
         <OrbitControls makeDefault />
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
         <Model />
         <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
-          margin={[80, 80]} // widget margins (X, Y)
+          margin={[50, 60]} // widget margins (X, Y)
         >
           <GizmoViewport
             axisColors={['red', 'green', 'blue']}
