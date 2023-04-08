@@ -9,27 +9,27 @@ import Foot from './BirdFoot';
 function BirdBody() {
   const [bodyPosition, setBodyPosition] = useState([0, 0, 0]);
   const [moveUp, setMoveUp] = useState(true);
-  useFrame(() => {
-    if (moveUp) {
-      setBodyPosition([
-        bodyPosition[0],
-        bodyPosition[1] + 0.0015,
-        bodyPosition[2],
-      ]);
-    } else {
-      setBodyPosition([
-        bodyPosition[0],
-        bodyPosition[1] - 0.0015,
-        bodyPosition[2],
-      ]);
-    }
-    if (moveUp && bodyPosition[1] >= 0.07) {
-      setMoveUp(false);
-    }
-    if (!moveUp && bodyPosition[1] <= 0) {
-      setMoveUp(true);
-    }
-  });
+  // useFrame(() => {
+  //   if (moveUp) {
+  //     setBodyPosition([
+  //       bodyPosition[0],
+  //       bodyPosition[1] + 0.0015,
+  //       bodyPosition[2],
+  //     ]);
+  //   } else {
+  //     setBodyPosition([
+  //       bodyPosition[0],
+  //       bodyPosition[1] - 0.0015,
+  //       bodyPosition[2],
+  //     ]);
+  //   }
+  //   if (moveUp && bodyPosition[1] >= 0.07) {
+  //     setMoveUp(false);
+  //   }
+  //   if (!moveUp && bodyPosition[1] <= 0) {
+  //     setMoveUp(true);
+  //   }
+  // });
   return (
     <>
       <group position={[bodyPosition[0], bodyPosition[1], bodyPosition[2]]}>
