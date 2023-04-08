@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Torus, GradientTexture, Box, Cylinder } from '@react-three/drei';
 
 import { d2r, r2d, getRandomArb } from 'utils/common';
@@ -10,8 +10,12 @@ function BirdHead() {
   const [isGoinDown, setIsGoinDown] = useState(true);
   const [winkIt, setWinkIt] = useState(false);
   const [winkFrameCount, setWinkFrameCount] = useState(0);
+  const camera = useThree((state) => state.camera);
   const movements = useSelector(
     (state: { movements: { isNodding: boolean } }) => state.movements,
+  );
+  const cameraMoves = useSelector(
+    (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
   );
 
   useFrame(() => {
@@ -41,6 +45,24 @@ function BirdHead() {
     if (winkIt && winkFrameCount >= 10) {
       setWinkIt(false);
       setWinkFrameCount(0);
+    }
+    if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
+      camera.position.set(
+        camera.position.x * 0.9,
+        camera.position.y - 0.1,
+        camera.position.z * 0.9,
+      );
+    }
+    if (
+      !cameraMoves.zoomIn &&
+      camera.position.x >= -6 &&
+      camera.position.z <= 6
+    ) {
+      camera.position.set(
+        camera.position.x * 1.1,
+        camera.position.y + 0.1,
+        camera.position.z * 1.1,
+      );
     }
   });
 

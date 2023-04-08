@@ -1,37 +1,10 @@
-import { useSelector } from 'react-redux';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 // import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
 
 import BirdHead from './BirdHead';
 import BirdBody from './BirdBody';
 
 function Model() {
-  const camera = useThree((state) => state.camera);
-  const cameraMoves = useSelector(
-    (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
-  );
-
-  useFrame(() => {
-    if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
-      camera.position.set(
-        camera.position.x * 0.9,
-        camera.position.y - 0.1,
-        camera.position.z * 0.9,
-      );
-    }
-    if (
-      !cameraMoves.zoomIn &&
-      camera.position.x >= -6 &&
-      camera.position.z <= 6
-    ) {
-      camera.position.set(
-        camera.position.x * 1.1,
-        camera.position.y + 0.1,
-        camera.position.z * 1.1,
-      );
-    }
-  });
-
   return (
     <group position={[0, 2, 0]}>
       <BirdHead />
