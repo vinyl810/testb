@@ -29,7 +29,7 @@ function Bird() {
       <Canvas shadows camera={{ position: [-6, 3, 6] }} frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
-        {/* <Model /> */}
+        <Model />
         {/* <OrbitControls makeDefault />
         <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
