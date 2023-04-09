@@ -26,12 +26,12 @@ function Bird() {
       className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
       style={{ width: '90vw', height: '80vh' }}
     >
-      <Canvas shadows camera={{ position: [-6, 3, 6] }}>
-        {/* <OrbitControls makeDefault /> */}
+      {/* <Canvas shadows camera={{ position: [-6, 3, 6] }} frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
         <Model />
-        {/* <GizmoHelper
+        <OrbitControls makeDefault />
+        <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
           margin={[50, 60]} // widget margins (X, Y)
         >
@@ -39,8 +39,8 @@ function Bird() {
             axisColors={['red', 'green', 'blue']}
             labelColor="black"
           />
-        </GizmoHelper> */}
-      </Canvas>
+        </GizmoHelper>
+      </Canvas> */}
     </div>
   );
 }
