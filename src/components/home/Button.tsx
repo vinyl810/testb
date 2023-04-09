@@ -17,9 +17,7 @@ export default function MainButton({
         onClick={() => store.dispatch(dispatch)}
         type="button"
         className={`${
-          highlighted
-            ? 'outline outline-4 outline-offset-1 outline-slate-300 '
-            : ''
+          highlighted ? 'ring-4 ring-slate-300 ring-offset-1 ' : ''
         }${
           type === 'dark'
             ? 'bg-slate-500 text-white hover:bg-slate-600 active:bg-slate-700 '
