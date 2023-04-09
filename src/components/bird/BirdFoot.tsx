@@ -30,7 +30,7 @@ function Foot({
         castShadow
         receiveShadow
       >
-        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
+        <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -45,7 +45,7 @@ function Foot({
         castShadow
         receiveShadow
       >
-        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
+        <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -60,7 +60,7 @@ function Foot({
         castShadow
         receiveShadow
       >
-        <capsuleGeometry args={[0.065, 0.4, 50, 50]} />
+        <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}

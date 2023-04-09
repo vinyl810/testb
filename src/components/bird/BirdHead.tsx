@@ -77,7 +77,7 @@ function BirdHead() {
       receiveShadow
     >
       <mesh castShadow receiveShadow>
-        <sphereGeometry args={[0.75, 50, 50]} attach="geometry" />
+        <sphereGeometry args={[0.75, 25, 25]} attach="geometry" />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -87,7 +87,7 @@ function BirdHead() {
         </meshBasicMaterial>
       </mesh>
       <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
-        <coneGeometry args={[0.5, 1.5, 100]} attach="geometry" />
+        <coneGeometry args={[0.5, 1.5, 25]} attach="geometry" />
         <meshBasicMaterial>
           <GradientTexture
             stops={[0, 1]}
@@ -103,10 +103,10 @@ function BirdHead() {
           position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
           rotation={[-d2r(90), d2r(90 - 25), 0]}
         >
-          <Torus args={[0.125, 0.045, 50, 50]} />
+          <Torus args={[0.125, 0.045, 25, 25]} />
           <mesh rotation={[d2r(90), 0, 0]} castShadow receiveShadow>
             <cylinderGeometry
-              args={[0.125, 0.125, 0.1, 50, 50]}
+              args={[0.125, 0.125, 0.1, 25, 25]}
               attach="geometry"
             />
             <meshBasicMaterial>
@@ -131,17 +131,17 @@ function BirdHead() {
             receiveShadow
           />
           <Cylinder
-            args={[0.125 / 2, 0.085, 0.175, 50, 50]}
+            args={[0.125 / 2, 0.085, 0.175, 25, 25]}
             position={[-0.1, 0, -0.0375]}
             rotation={[d2r(90), 0, 0]}
           />
           <Cylinder
-            args={[0.125 / 2, 0.085, 0.175, 50, 50]}
+            args={[0.125 / 2, 0.085, 0.175, 25, 25]}
             position={[0.1, 0, -0.0375]}
             rotation={[d2r(90), 0, 0]}
           />
           <Box
-            args={[0.19, 0.1, 0.0775, 50, 50]}
+            args={[0.19, 0.1, 0.0775, 25, 25]}
             position={[0, 0, 0.0075]}
             rotation={[d2r(90), 0, 0]}
             castShadow
@@ -149,13 +149,13 @@ function BirdHead() {
             material-color="black"
           />
           <Cylinder
-            args={[0.075 / 2, 0.085, 0.175, 50, 50]}
+            args={[0.075 / 2, 0.085, 0.175, 25, 25]}
             position={[-0.0825, 0, -0.03]}
             rotation={[d2r(90), 0, 0]}
             material-color="black"
           />
           <Cylinder
-            args={[0.075 / 2, 0.085, 0.175, 50, 50]}
+            args={[0.075 / 2, 0.085, 0.175, 25, 25]}
             position={[0.0825, 0, -0.03]}
             rotation={[d2r(90), 0, 0]}
             material-color="black"
@@ -168,10 +168,10 @@ function BirdHead() {
         position={[-0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
         rotation={[d2r(90), d2r(90 - 25), 0]}
       >
-        <Torus args={[0.125, 0.045, 50, 50]} />
+        <Torus args={[0.125, 0.045, 25, 25]} />
         <mesh rotation={[d2r(90), 0, 0]} castShadow receiveShadow>
           <cylinderGeometry
-            args={[0.125, 0.125, 0.1, 50, 50]}
+            args={[0.125, 0.125, 0.1, 25, 25]}
             attach="geometry"
           />
           <meshBasicMaterial>

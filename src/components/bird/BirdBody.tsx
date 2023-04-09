@@ -39,7 +39,7 @@ function BirdBody() {
           rotation={[0, 0, d2r(60)]}
           position={[0.65, -1.8, 0]}
         >
-          <capsuleGeometry args={[1.05, 0.75, 50, 50]} />
+          <capsuleGeometry args={[1.05, 0.75, 25, 25]} />
           <meshBasicMaterial>
             <GradientTexture
               stops={[0, 1]} // As many stops as you want
@@ -52,7 +52,7 @@ function BirdBody() {
         <Wing rotation={[0, 0, d2r(-30)]} position={[0.45, -1.6, -1]} />
 
         <mesh position={[1.5, -1.5, 0]} rotation={[0, 0, d2r(90)]}>
-          <capsuleGeometry args={[0.25, 1, 50, 50]} />
+          <capsuleGeometry args={[0.25, 1, 25, 25]} />
           <meshBasicMaterial>
             <GradientTexture
               stops={[0, 1]}
@@ -62,7 +62,7 @@ function BirdBody() {
           </meshBasicMaterial>
         </mesh>
         <mesh position={[1.6, -1.75, 0]} rotation={[0, 0, d2r(90)]}>
-          <capsuleGeometry args={[0.25, 1, 50, 50]} />
+          <capsuleGeometry args={[0.25, 1, 25, 25]} />
           <meshBasicMaterial>
             <GradientTexture
               stops={[0, 1]}
@@ -72,7 +72,7 @@ function BirdBody() {
           </meshBasicMaterial>
         </mesh>
         <mesh position={[1.65, -2, 0]} rotation={[0, 0, d2r(90)]}>
-          <capsuleGeometry args={[0.25, 1, 50, 50]} />
+          <capsuleGeometry args={[0.25, 1, 25, 25]} />
           <meshBasicMaterial>
             <GradientTexture
               stops={[0, 1]}
