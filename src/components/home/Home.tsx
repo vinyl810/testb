@@ -31,7 +31,7 @@ function Main() {
           />
         </div>
       </div>
-      <div className="mt-5 flex h-8 w-full items-center justify-center bg-slate-300 font-thin">
+      <div className="mt-5 flex h-8 w-full items-center justify-center self-end bg-slate-300 font-thin">
         <img className="mr-1" src={githubImg} width="15px" alt="Github" />
         vinyl810
       </div>
