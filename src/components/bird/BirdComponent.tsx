@@ -24,7 +24,7 @@ function Bird() {
   return (
     <div
       className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
-      style={{ width: '90vw', height: '80vh' }}
+      style={{ width: '90vw', height: '70vh' }}
     >
       <Canvas shadows camera={{ position: [-6, 3, 6] }} frameloop="demand">
         <ambientLight intensity={1} />
