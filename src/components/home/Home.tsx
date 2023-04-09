@@ -24,12 +24,6 @@ function Main() {
             type="light"
           />
           <MainButton
-            dispatch={{ type: 'toggleNod' }}
-            highlighted={movements.isNodding}
-            text="끄덕끄덕"
-            type="light"
-          />
-          <MainButton
             dispatch={{ type: 'toggleZoom' }}
             highlighted={cameraMoves.zoomIn}
             text="가까이"
