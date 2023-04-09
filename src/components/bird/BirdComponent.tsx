@@ -26,7 +26,7 @@ function Bird() {
       className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
       style={{ width: '90vw', height: '80vh' }}
     >
-      <Canvas shadows camera={{ position: [-6, 3, 6] }}>
+      <Canvas shadows camera={{ position: [-6, 3, 6] }} dpr={[0.5, 1]}>
         {/* <OrbitControls makeDefault /> */}
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
