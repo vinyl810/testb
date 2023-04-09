@@ -18,53 +18,53 @@ function BirdHead() {
     (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
   );
 
-  useFrame(() => {
-    setWinkFrameCount(winkFrameCount + 1);
-    if (isGoinDown && movements.isNodding) {
-      setHeadRotationY(
-        headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
-      );
-    } else if (movements.isNodding) {
-      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
-    }
-    if (r2d(headRotationY) >= 45) {
-      setIsGoinDown(false);
-      setHeadRotationY(d2r(44));
-    }
-    if (r2d(headRotationY) <= 15) {
-      setIsGoinDown(true);
-      setHeadRotationY(d2r(15.5));
-    }
-    if (!movements.isNodding) {
-      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
-    }
-    if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
-      setWinkIt(true);
-      setWinkFrameCount(0);
-    }
-    if (winkIt && winkFrameCount >= 10) {
-      setWinkIt(false);
-      setWinkFrameCount(0);
-    }
-    if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
-      camera.position.set(
-        camera.position.x * 0.9,
-        camera.position.y - 0.1,
-        camera.position.z * 0.9,
-      );
-    }
-    if (
-      !cameraMoves.zoomIn &&
-      camera.position.x >= -6 &&
-      camera.position.z <= 6
-    ) {
-      camera.position.set(
-        camera.position.x * 1.1,
-        camera.position.y + 0.1,
-        camera.position.z * 1.1,
-      );
-    }
-  });
+  // useFrame(() => {
+  //   setWinkFrameCount(winkFrameCount + 1);
+  //   if (isGoinDown && movements.isNodding) {
+  //     setHeadRotationY(
+  //       headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
+  //     );
+  //   } else if (movements.isNodding) {
+  //     setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
+  //   }
+  //   if (r2d(headRotationY) >= 45) {
+  //     setIsGoinDown(false);
+  //     setHeadRotationY(d2r(44));
+  //   }
+  //   if (r2d(headRotationY) <= 15) {
+  //     setIsGoinDown(true);
+  //     setHeadRotationY(d2r(15.5));
+  //   }
+  //   if (!movements.isNodding) {
+  //     setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
+  //   }
+  //   if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
+  //     setWinkIt(true);
+  //     setWinkFrameCount(0);
+  //   }
+  //   if (winkIt && winkFrameCount >= 10) {
+  //     setWinkIt(false);
+  //     setWinkFrameCount(0);
+  //   }
+  //   if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
+  //     camera.position.set(
+  //       camera.position.x * 0.9,
+  //       camera.position.y - 0.1,
+  //       camera.position.z * 0.9,
+  //     );
+  //   }
+  //   if (
+  //     !cameraMoves.zoomIn &&
+  //     camera.position.x >= -6 &&
+  //     camera.position.z <= 6
+  //   ) {
+  //     camera.position.set(
+  //       camera.position.x * 1.1,
+  //       camera.position.y + 0.1,
+  //       camera.position.z * 1.1,
+  //     );
+  //   }
+  // });
 
   return (
     <group
