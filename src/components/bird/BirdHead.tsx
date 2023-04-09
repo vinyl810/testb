@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Torus, GradientTexture, Box, Cylinder } from '@react-three/drei';
+import * as THREE from 'three';
 
 import { d2r, r2d, getRandomArb } from 'utils/common';
 
@@ -17,25 +18,26 @@ function BirdHead() {
   const cameraMoves = useSelector(
     (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
   );
-
-  useFrame(() => {
+  const tick = () => {
     setWinkFrameCount(winkFrameCount + 1);
-    if (isGoinDown && movements.isNodding) {
-      setHeadRotationY(
-        headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
-      );
-    } else if (movements.isNodding) {
-      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
+    if (movements.isNodding) {
+      if (isGoinDown) {
+        setHeadRotationY(
+          headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
+        );
+      } else {
+        setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
+      }
+      if (r2d(headRotationY) >= 45) {
+        setIsGoinDown(false);
+        setHeadRotationY(d2r(44));
+      }
+      if (r2d(headRotationY) <= 15) {
+        setIsGoinDown(true);
+        setHeadRotationY(d2r(15.5));
+      }
     }
-    if (r2d(headRotationY) >= 45) {
-      setIsGoinDown(false);
-      setHeadRotationY(d2r(44));
-    }
-    if (r2d(headRotationY) <= 15) {
-      setIsGoinDown(true);
-      setHeadRotationY(d2r(15.5));
-    }
-    if (!movements.isNodding) {
+    if (!movements.isNodding && r2d(headRotationY) > 15) {
       setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
     }
     if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
@@ -64,7 +66,9 @@ function BirdHead() {
         camera.position.z * 1.1,
       );
     }
-  });
+  };
+  // useFrame(tick, 0);
+  window.requestAnimationFrame(tick);
 
   return (
     <group
