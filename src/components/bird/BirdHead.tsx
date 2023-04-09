@@ -68,7 +68,7 @@ function BirdHead() {
     }
   };
   // useFrame(tick, 0);
-  window.requestAnimationFrame(tick);
+  // window.requestAnimationFrame(tick);
 
   return (
     <group

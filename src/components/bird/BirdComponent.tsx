@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-// import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
+import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
 
 import BirdHead from './BirdHead';
 import BirdBody from './BirdBody';
@@ -30,8 +30,8 @@ function Bird() {
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
         <Model />
-        {/* <OrbitControls makeDefault />
-        <GizmoHelper
+        <OrbitControls makeDefault />
+        {/* <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
           margin={[50, 60]} // widget margins (X, Y)
         >
