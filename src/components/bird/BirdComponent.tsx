@@ -26,6 +26,9 @@ function Bird() {
   useEffect(() => {
     setOnRender(true);
     console.log('setOnRender');
+    return () => {
+      console.log('onUnmount')
+    };
   }, []);
   return (
     <div
