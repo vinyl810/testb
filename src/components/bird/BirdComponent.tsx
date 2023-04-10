@@ -25,6 +25,7 @@ function Bird() {
   const [onRender, setOnRender] = useState(false);
   useEffect(() => {
     setOnRender(true);
+    console.log('setOnRender');
   }, []);
   return (
     <div
