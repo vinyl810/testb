@@ -20,23 +20,23 @@ function BirdHead() {
   );
   const tick = () => {
     // setWinkFrameCount(winkFrameCount + 1);
-    // if (movements.isNodding) {
-    //   if (isGoinDown) {
-    //     setHeadRotationY(
-    //       headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
-    //     );
-    //   } else {
-    //     setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
-    //   }
-    //   if (r2d(headRotationY) >= 45) {
-    //     setIsGoinDown(false);
-    //     setHeadRotationY(d2r(44));
-    //   }
-    //   if (r2d(headRotationY) <= 15) {
-    //     setIsGoinDown(true);
-    //     setHeadRotationY(d2r(15.5));
-    //   }
-    // }
+    if (movements.isNodding) {
+      if (isGoinDown) {
+        setHeadRotationY(
+          headRotationY + d2r(Math.abs(55 - r2d(headRotationY)) / 15),
+        );
+      } else {
+        setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 5) / 15));
+      }
+      if (r2d(headRotationY) >= 45) {
+        setIsGoinDown(false);
+        setHeadRotationY(d2r(44));
+      }
+      if (r2d(headRotationY) <= 15) {
+        setIsGoinDown(true);
+        setHeadRotationY(d2r(15.5));
+      }
+    }
     // if (!movements.isNodding && r2d(headRotationY) > 15) {
     //   setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
     // }
