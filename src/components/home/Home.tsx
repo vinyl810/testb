@@ -21,12 +21,14 @@ function Main() {
             dispatch={{ type: 'toggleNod' }}
             highlighted={movements.isNodding}
             text="끄덕끄덕"
+            isFirst
             type="light"
           />
           <MainButton
             dispatch={{ type: 'toggleZoom' }}
             highlighted={cameraMoves.zoomIn}
             text="가까이"
+            isFirst={false}
             type="dark"
           />
         </div>

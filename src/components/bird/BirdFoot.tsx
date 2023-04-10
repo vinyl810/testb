@@ -1,5 +1,3 @@
-import { GradientTexture } from '@react-three/drei';
-
 import { d2r } from 'utils/common';
 
 function Foot({
