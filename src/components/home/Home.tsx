@@ -16,7 +16,10 @@ function Main() {
       <Header />
       <div className="row-span-6 flex h-full items-center justify-center self-center">
         <Bird />
-        <div className="z-10 -ml-32 mr-5 h-full w-32 self-stretch">
+        <div
+          className="absolute z-10 h-full w-32 self-stretch"
+          style={{ right: '5vw' }}
+        >
           <MainButton
             dispatch={{ type: 'toggleNod' }}
             highlighted={movements.isNodding}

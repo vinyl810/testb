@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
-import { useEffect, useState } from 'react';
 import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
+import { d2r } from 'utils/common';
 
 import BirdHead from './BirdHead';
 import BirdBody from './BirdBody';
@@ -24,14 +24,14 @@ function Model() {
 function Bird() {
   return (
     <div
-      className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
+      className="self-stretch rounded-md bg-slate-100 shadow-lg"
       style={{ width: '90vw', height: '70vh' }}
     >
       <Canvas shadows camera={{ position: [-6, 3, 6] }}>
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
         <Model />
-        {/* <OrbitControls makeDefault /> */}
+        {/* <OrbitControls makeDefault target={[0, 2, 0]} /> */}
         {/* <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
           margin={[50, 60]} // widget margins (X, Y)

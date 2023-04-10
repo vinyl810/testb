@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Torus, shaderMaterial, Box, Cylinder } from '@react-three/drei';
-import * as THREE from 'three';
-
+import { Torus, Box, Cylinder } from '@react-three/drei';
 import { d2r, r2d, getRandomArb } from 'utils/common';
 
 function BirdHead() {
@@ -68,7 +66,6 @@ function BirdHead() {
     }
   };
   useFrame(tick, 0);
-  // window.requestAnimationFrame(tick);
 
   return (
     <group
