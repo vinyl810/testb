@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Torus, GradientTexture, Box, Cylinder } from '@react-three/drei';
+import { Torus, shaderMaterial, Box, Cylinder } from '@react-three/drei';
 import * as THREE from 'three';
 
 import { d2r, r2d, getRandomArb } from 'utils/common';
@@ -78,7 +78,7 @@ function BirdHead() {
     >
       <mesh castShadow receiveShadow>
         <sphereGeometry args={[0.75, 50, 50]} attach="geometry" />
-        <meshBasicMaterial color="lightblue" />
+        <meshBasicMaterial color="lightsteelblue" />
       </mesh>
       <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
         <coneGeometry args={[0.5, 1.5, 25]} attach="geometry" />
