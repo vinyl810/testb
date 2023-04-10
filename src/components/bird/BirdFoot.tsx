@@ -15,13 +15,7 @@ function Foot({
     <group rotation={[rotx, roty, rotz]} position={[posx, posy, posz]}>
       <mesh position={[0.75, -3, 0]} castShadow receiveShadow>
         <cylinderGeometry args={[0.1, 0.1, 1.25]} />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['yellow', 'orange']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <meshBasicMaterial color="orange" />
       </mesh>
 
       <mesh
@@ -31,13 +25,7 @@ function Foot({
         receiveShadow
       >
         <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['orange', 'yellow']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <meshBasicMaterial color="orange" />
       </mesh>
       <mesh
         position={[0.6, -3.65, -0.1]}
@@ -46,13 +34,7 @@ function Foot({
         receiveShadow
       >
         <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['orange', 'yellow']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <meshBasicMaterial color="orange" />
       </mesh>
       <mesh
         position={[0.6, -3.65, 0.1]}
@@ -61,13 +43,7 @@ function Foot({
         receiveShadow
       >
         <capsuleGeometry args={[0.065, 0.4, 25, 25]} />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['orange', 'yellow']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <meshBasicMaterial color="orange" />
       </mesh>
     </group>
   );

@@ -77,24 +77,12 @@ function BirdHead() {
       receiveShadow
     >
       <mesh castShadow receiveShadow>
-        <sphereGeometry args={[0.75, 25, 25]} attach="geometry" />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['aquamarine', 'hotpink']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <sphereGeometry args={[0.75, 50, 50]} attach="geometry" />
+        <meshBasicMaterial color="lightblue" />
       </mesh>
       <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
         <coneGeometry args={[0.5, 1.5, 25]} attach="geometry" />
-        <meshBasicMaterial>
-          {/* <GradientTexture
-            stops={[0, 1]}
-            colors={['orange', 'yellow']}
-            size={1024}
-          /> */}
-        </meshBasicMaterial>
+        <meshBasicMaterial color="orange" />
       </mesh>
 
       {/* Left eye */}
@@ -103,19 +91,13 @@ function BirdHead() {
           position={[0.725 * Math.cos(d2r(25)), 0.725 * Math.sin(d2r(25)), 0]}
           rotation={[-d2r(90), d2r(90 - 25), 0]}
         >
-          <Torus args={[0.125, 0.045, 25, 25]} />
+          <Torus args={[0.125, 0.045, 25, 25]} material-color="white" />
           <mesh rotation={[d2r(90), 0, 0]} castShadow receiveShadow>
             <cylinderGeometry
               args={[0.125, 0.125, 0.1, 25, 25]}
               attach="geometry"
             />
-            <meshBasicMaterial>
-              {/* <GradientTexture
-                stops={[0, 0.5, 1]}
-                colors={['black', 'black', 'black']}
-                size={1024}
-              /> */}
-            </meshBasicMaterial>
+            <meshBasicMaterial color="black" />
           </mesh>
         </group>
       ) : (
@@ -174,13 +156,7 @@ function BirdHead() {
             args={[0.125, 0.125, 0.1, 25, 25]}
             attach="geometry"
           />
-          <meshBasicMaterial>
-            {/* <GradientTexture
-              stops={[0, 0.5, 1]}
-              colors={['black', 'black', 'black']}
-              size={1024}
-            /> */}
-          </meshBasicMaterial>
+          <meshBasicMaterial color="black" />
         </mesh>
       </group>
     </group>

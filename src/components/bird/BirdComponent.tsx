@@ -11,7 +11,7 @@ function Model() {
       <BirdHead />
       <BirdBody />
       <mesh position={[0, -3.925, 0]} receiveShadow>
-        <cylinderGeometry args={[4.5, 4.5, 0.25, 25, 25]} />
+        <cylinderGeometry args={[4.5, 4.5, 0.25, 50, 50]} />
         <meshStandardMaterial color="wheat" />
       </mesh>
       <mesh position={[0, -3.825, 0]} receiveShadow>
