@@ -22,26 +22,17 @@ function Model() {
   );
 }
 function Bird() {
-  const [onRender, setOnRender] = useState(false);
-  useEffect(() => {
-    setOnRender(true);
-    console.log('setOnRender');
-    return () => {
-      console.log('onUnmount');
-    };
-  }, []);
   return (
     <div
       className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
       style={{ width: '90vw', height: '70vh' }}
     >
-      {onRender ? (
-        <Canvas shadows camera={{ position: [-6, 3, 6] }} frameloop="demand">
-          <ambientLight intensity={1} />
-          <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
-          <Model />
-          <OrbitControls makeDefault />
-          {/* <GizmoHelper
+      <Canvas shadows camera={{ position: [-6, 3, 6] }} frameloop="demand">
+        <ambientLight intensity={1} />
+        <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />
+        <Model />
+        {/* <OrbitControls makeDefault /> */}
+        {/* <GizmoHelper
           alignment="bottom-right" // widget alignment within scene
           margin={[50, 60]} // widget margins (X, Y)
         >
@@ -50,10 +41,7 @@ function Bird() {
             labelColor="black"
           />
         </GizmoHelper> */}
-        </Canvas>
-      ) : (
-        <div />
-      )}
+      </Canvas>
     </div>
   );
 }
