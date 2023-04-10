@@ -17,31 +17,31 @@ function Wing({
       <mesh position={[-0.1, 0.2, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.5, 25, 25]} />
         <meshBasicMaterial>
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0, 1]}
             colors={['aquamarine', 'hotpink']}
             size={1024}
-          />
+          /> */}
         </meshBasicMaterial>
       </mesh>
       <mesh position={[-0.1, 0.1, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.4, 25, 25]} />
         <meshBasicMaterial>
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0, 1]}
             colors={['aquamarine', 'hotpink']}
             size={1024}
-          />
+          /> */}
         </meshBasicMaterial>
       </mesh>
       <mesh position={[-0.1, 0, 0.1 * posz]} rotation={[0, 0, d2r(90)]}>
         <capsuleGeometry args={[0.1, 0.3, 25, 25]} />
         <meshBasicMaterial>
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0, 1]}
             colors={['aquamarine', 'hotpink']}
             size={1024}
-          />
+          /> */}
         </meshBasicMaterial>
       </mesh>
     </group>

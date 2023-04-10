@@ -19,7 +19,7 @@ function BirdHead() {
     (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
   );
   const tick = () => {
-    // setWinkFrameCount(winkFrameCount + 1);
+    setWinkFrameCount(winkFrameCount + 1);
     if (movements.isNodding) {
       if (isGoinDown) {
         setHeadRotationY(
@@ -37,35 +37,35 @@ function BirdHead() {
         setHeadRotationY(d2r(15.5));
       }
     }
-    // if (!movements.isNodding && r2d(headRotationY) > 15) {
-    //   setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
-    // }
-    // if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
-    //   setWinkIt(true);
-    //   setWinkFrameCount(0);
-    // }
-    // if (winkIt && winkFrameCount >= 10) {
-    //   setWinkIt(false);
-    //   setWinkFrameCount(0);
-    // }
-    // if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
-    //   camera.position.set(
-    //     camera.position.x * 0.9,
-    //     camera.position.y - 0.1,
-    //     camera.position.z * 0.9,
-    //   );
-    // }
-    // if (
-    //   !cameraMoves.zoomIn &&
-    //   camera.position.x >= -6 &&
-    //   camera.position.z <= 6
-    // ) {
-    //   camera.position.set(
-    //     camera.position.x * 1.1,
-    //     camera.position.y + 0.1,
-    //     camera.position.z * 1.1,
-    //   );
-    // }
+    if (!movements.isNodding && r2d(headRotationY) > 15) {
+      setHeadRotationY(headRotationY - d2r((r2d(headRotationY) - 10) / 15));
+    }
+    if (!winkIt && winkFrameCount >= getRandomArb(100, 1000)) {
+      setWinkIt(true);
+      setWinkFrameCount(0);
+    }
+    if (winkIt && winkFrameCount >= 10) {
+      setWinkIt(false);
+      setWinkFrameCount(0);
+    }
+    if (cameraMoves.zoomIn && camera.position.x < -3 && camera.position.z > 3) {
+      camera.position.set(
+        camera.position.x * 0.9,
+        camera.position.y - 0.1,
+        camera.position.z * 0.9,
+      );
+    }
+    if (
+      !cameraMoves.zoomIn &&
+      camera.position.x >= -6 &&
+      camera.position.z <= 6
+    ) {
+      camera.position.set(
+        camera.position.x * 1.1,
+        camera.position.y + 0.1,
+        camera.position.z * 1.1,
+      );
+    }
   };
   useFrame(tick, 0);
   // window.requestAnimationFrame(tick);
@@ -79,21 +79,21 @@ function BirdHead() {
       <mesh castShadow receiveShadow>
         <sphereGeometry args={[0.75, 25, 25]} attach="geometry" />
         <meshBasicMaterial>
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0, 1]}
             colors={['aquamarine', 'hotpink']}
             size={1024}
-          />
+          /> */}
         </meshBasicMaterial>
       </mesh>
       <mesh castShadow receiveShadow position={[0, 0.5, 0]}>
         <coneGeometry args={[0.5, 1.5, 25]} attach="geometry" />
         <meshBasicMaterial>
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0, 1]}
             colors={['orange', 'yellow']}
             size={1024}
-          />
+          /> */}
         </meshBasicMaterial>
       </mesh>
 
@@ -110,11 +110,11 @@ function BirdHead() {
               attach="geometry"
             />
             <meshBasicMaterial>
-              <GradientTexture
+              {/* <GradientTexture
                 stops={[0, 0.5, 1]}
                 colors={['black', 'black', 'black']}
                 size={1024}
-              />
+              /> */}
             </meshBasicMaterial>
           </mesh>
         </group>
@@ -175,11 +175,11 @@ function BirdHead() {
             attach="geometry"
           />
           <meshBasicMaterial>
-            <GradientTexture
+            {/* <GradientTexture
               stops={[0, 0.5, 1]}
               colors={['black', 'black', 'black']}
               size={1024}
-            />
+            /> */}
           </meshBasicMaterial>
         </mesh>
       </group>
