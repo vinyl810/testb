@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber';
+import { useEffect, useState } from 'react';
 import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
 
 import BirdHead from './BirdHead';
@@ -21,6 +22,10 @@ function Model() {
   );
 }
 function Bird() {
+  const [onRender, setOnRender] = useState(false);
+  useEffect(() => {
+    setOnRender(true);
+  }, []);
   return (
     <div
       className="ml-5 self-stretch rounded-md bg-slate-100 shadow-lg"
