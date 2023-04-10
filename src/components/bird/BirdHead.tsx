@@ -67,7 +67,7 @@ function BirdHead() {
       );
     }
   };
-  // useFrame(tick, 0);
+  useFrame(tick, 0);
   // window.requestAnimationFrame(tick);
 
   return (
