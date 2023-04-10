@@ -27,7 +27,7 @@ function Bird() {
     setOnRender(true);
     console.log('setOnRender');
     return () => {
-      console.log('onUnmount')
+      console.log('onUnmount');
     };
   }, []);
   return (
