@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
 import { d2r } from 'utils/common';
 
+import { ReactNode } from 'react';
 import BirdHead from './BirdHead';
 import BirdBody from './BirdBody';
 
@@ -21,12 +22,13 @@ function Model() {
     </group>
   );
 }
-function Bird() {
+function Bird({ children }: { children: ReactNode }) {
   return (
     <div
       className="self-stretch rounded-md bg-slate-100 shadow-lg"
-      style={{ width: '90vw', height: '70vh' }}
+      style={{ width: '90vw', height: '82vh' }}
     >
+      {children}
       <Canvas shadows camera={{ position: [-6, 3, 6] }}>
         <ambientLight intensity={1} />
         <directionalLight position={[-1, 5, 3]} intensity={0.7} castShadow />

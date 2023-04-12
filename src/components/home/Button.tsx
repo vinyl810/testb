@@ -17,7 +17,7 @@ export default function MainButton({
     <div
       className={`${
         !isFirst ? 'pt-2.5' : ''
-      } flex w-full items-center justify-center rounded-md p-5 pb-0`}
+      } flex w-full items-center justify-center rounded-md pb-0`}
     >
       <button
         onClick={() => store.dispatch(dispatch)}
