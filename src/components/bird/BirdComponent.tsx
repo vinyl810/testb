@@ -26,7 +26,7 @@ function Bird({ children }: { children: ReactNode }) {
   return (
     <div
       className="self-stretch rounded-md bg-slate-100 shadow-lg"
-      style={{ width: '90vw', height: '82vh' }}
+      style={{ width: '90vw' }}
     >
       {children}
       <Canvas shadows camera={{ position: [-6, 3, 6] }}>

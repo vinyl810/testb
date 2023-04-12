@@ -28,4 +28,7 @@
   .h-screen {
     height: -webkit-fill-available;
   }
+	.max-h-screen {
+    height: -webkit-fill-available;
+  }
 }

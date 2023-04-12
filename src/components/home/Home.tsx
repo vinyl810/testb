@@ -12,7 +12,7 @@ function Main() {
     (state: { cameraMoves: { zoomIn: boolean } }) => state.cameraMoves,
   );
   return (
-    <div className="text sm:text-md grid-rows-7 grid h-screen w-screen font-kopub text-xs font-bold sm:h-screen">
+    <div className="text sm:text-md grid-rows-7 grid h-screen max-h-screen w-screen font-kopub text-xs font-bold sm:h-screen">
       <Header />
       <div className="row-span-6 flex h-full items-center justify-center self-center">
         <Bird>
