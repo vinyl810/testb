@@ -24,3 +24,8 @@
 	src:local('KoPubWorldDotum'),
 	url('../assets/font/KoPubWorldDotumBold.woff') format('woff');
 }
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
